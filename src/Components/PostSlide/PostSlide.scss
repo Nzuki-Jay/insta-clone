@@ -1,0 +1,40 @@
+@import '../../functions';
+
+.postSlide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 1200px;
+    max-height: 700px;
+    z-index: 1000;
+
+    .leftBtn,
+    .rightBtn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 110px;
+        background-color: var(--text-color);
+        color: var(--bg);
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        z-index: 9999;
+        font-size: 20px;
+        @include flex-grid($align: center, $justify: center);
+    }
+
+
+    .leftBtn {
+        left: 0;
+    }
+
+    .rightBtn {
+        right: 0;
+    }
+}

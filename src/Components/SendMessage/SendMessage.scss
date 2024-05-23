@@ -1,0 +1,145 @@
+@import '../../functions';
+
+.sendmessages {
+    background-color: var(--button-hover);
+    position: fixed;
+    border-radius: 8px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 550px;
+    height: 450px;
+    @include flex-grid($direction: column, $align: flex-start);
+    z-index: 1000;
+
+    @include mdscreen() {
+        width: 400px;
+        height: 350px;  
+    }
+    hr {
+        width: 100%;
+        height: 1px;
+        border: none;
+        background-color: var(--border-color);
+    }
+
+    .header {
+        padding: 10px 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .input {
+        @include flex-grid($gap: 15px, $align: center);
+        padding: 10px 20px;
+        width: 100%;
+
+        .selected {
+            @include flex-grid($gap: 10px, $align: center);
+            background-color: var(--bg);
+            border-radius: 10px;
+            cursor: pointer;
+            width: fit-content;
+            padding: 5px 10px;
+
+            span {
+                width: max-content;
+            }
+
+            .removeselected {
+                font-size: 20px;
+            }
+        }
+
+        input {
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            color: var(--text-color);
+            outline: none;
+            padding: 8px 0;
+        }
+    }
+
+    .results {
+        max-height: 300px;
+        overflow-y: scroll;
+        height: 100%;
+        width: 100%;
+        @include flex-grid($direction: column, $align: flex-start);
+
+        p {
+            padding: 20px;
+            color: var(--text-lighter);
+        }
+
+        .account {
+            @include flex-grid($align: center, $justify: space-between);
+            width: 100%;
+            padding: 5px 0;
+            cursor: pointer;
+            margin-top: 15px;
+
+            &:hover {
+                background-color: var(--button-color);
+            }
+
+            .info {
+                @include flex-grid($align: center, $gap: 10px);
+                margin-left: 20px;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+
+            button {
+                border-radius: 50%;
+                border:  1px solid var(--text-color);
+                margin-right: 20px;
+                background-color: transparent;
+                width: 25px;
+                height: 25px;
+                @include flex-grid($align: center, $justify: center);
+
+                &.active {
+                    background-color: var(--text-color);
+                    border: none;
+                    color: var(--bg);
+                }
+            }
+        }  
+    }
+
+    .chatlink {
+        width: 95%;
+        padding: 10px 20px;
+        margin: 20px auto;
+        background-color: var(--link-color);
+        color: var(--text-color);
+        border-radius: 8px;
+        pointer-events: none;
+        opacity: 0.5;
+        text-align: center;
+
+
+        &.active {
+            pointer-events: initial;
+            opacity: 1;
+        }
+    }
+
+    .removesendmessages {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+}

@@ -1,0 +1,30 @@
+@import '../../functions';
+
+
+.settings {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: var(--button-hover);
+    height: fit-content;
+    max-width: 400px;
+    @include flex-grid($direction: column);
+    width: 100%;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000;
+
+    p {
+        border-bottom: 1px solid var(--border-color);
+        padding: 15px 0;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    p:nth-child(8) {
+        border: none;
+    }
+}

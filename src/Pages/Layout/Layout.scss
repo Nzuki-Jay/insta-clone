@@ -1,0 +1,29 @@
+@import '../../functions';
+
+.layout {
+    background-color: var(--bg);
+    color: var(--text-color);
+    font-size: 17px;
+    @include flex-grid();
+    height: 100%;
+    width: 100%;
+
+    @include mdscreen() {
+        @include flex-grid($direction: column);
+        width: 100%;
+    }
+
+    .content {
+        flex: 1;   
+    }
+
+    .transparent-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+        z-index: 999;  
+    }
+}

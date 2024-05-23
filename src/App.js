@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import './App.scss';
+import Layout from './Pages/Layout/Layout';
+import Home from './Pages/Home/Home';
+import Profile from './Pages/Profile/Profile';
+import ProfilePosts from './Pages/profilePosts/profilePosts';
+import Tagged from './Pages/Tagged/Tagged';
+import Saved from './Pages/Saved/Saved';
+import Explore from './Pages/Explore/Explore';
+import Messages from './Pages/Messages/Messages';
+import Chat from './Pages/Chat/Chat';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Home />} /> 
+            <Route path="/profile" element={<Profile />}>
+              <Route path="/profile" element={<ProfilePosts />} />
+              <Route path="/profile/tagged" element={<Tagged />} />  
+              <Route path="/profile/saved" element={<Saved />} />
+            </Route> 
+            <Route path="/explore" element={<Explore />} /> 
+            <Route path="/messages" element={<Messages />}>
+              <Route path="/messages/chat/:userId" element={<Chat />} /> 
+
+            </Route>
+          </Route>
+        </Routes>
+     
+      </div>
+
+    </BrowserRouter>
+    
   );
 }
 

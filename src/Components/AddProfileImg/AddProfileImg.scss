@@ -1,0 +1,56 @@
+@import '../../functions';
+
+
+.addImage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-color: var(--button-hover);
+    width: 400px;
+    height: fit-content;
+    @include flex-grid($align: center, $direction: column);
+    text-align: center;
+    border-radius: 8px;
+    z-index: 1000;
+
+    span {
+        font-size: 25px;
+        padding: 20px;
+    }
+
+    .fileBtn,
+    span,
+    p,
+    button {
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
+        align-self: center;
+        font-weight: bold;
+    }
+
+    .fileBtn {
+        color: var(--link-color);
+        width: 100%;
+    }
+
+    button,
+    .fileBtn {
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    button {
+        border: none;
+        color: var(--text-color);
+        width: fit-content;
+    }
+
+    p {
+        color: rgb(196, 17, 17);
+        cursor: pointer;
+    }
+}

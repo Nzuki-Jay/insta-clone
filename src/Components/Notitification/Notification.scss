@@ -1,0 +1,73 @@
+@import '../../functions';
+
+.note {
+    @include flex-grid( $align: center, $justify: space-between);
+    width: 100%;
+    cursor: pointer;
+    
+    .left {
+        @include flex-grid( $align: center, $gap: 15px);
+        flex: 1;
+
+        .profImg {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        p {
+            width: 100%;
+            color: var(--text-light);
+            flex: 1;
+            display: inline;
+            margin-right: 10px;
+
+            span {
+                margin: 5px;
+            }
+
+            span:nth-child(1) {
+                color: var(--text-color);
+            }
+
+            span:nth-child(2) {
+                color: var(--text-lighter);
+            }
+        }
+        
+    }
+
+    .right {
+        .postImg {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+        }
+
+        button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: var(--text-color);
+
+            &.black {
+                background-color: var(--button-hover);
+
+                &:hover {
+                    background-color: var(--button-color);
+                }
+            }
+
+            &.blue {
+                background-color: var(--link-color);
+
+                &:hover {
+                    background-color: rgb(4, 4, 199);
+                }
+            }
+        }
+    }
+
+}

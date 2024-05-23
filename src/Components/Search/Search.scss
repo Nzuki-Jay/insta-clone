@@ -1,0 +1,125 @@
+@import '../../functions';
+
+.search {
+    position: fixed;
+    z-index: 999;
+    left: -500px;
+    top: 0;
+    max-height: 100vh;
+    height: 100%;
+    background-color: var(--bg);
+    width: 400px;
+    @include flex-grid($align: flex-start, $direction: column);
+    border-right: 1px solid var(--border-color);
+
+    &.active {
+        left: 70px;
+        transition: 0.3s smooth;
+    }
+
+    @include mdscreen() {
+        max-height: calc(100vh - 120px);
+        top: 60px;
+        padding-top: 20px;
+
+        &.active {
+            left: 0;
+            transition: 0.3s smooth;
+        }
+    }
+
+    &
+
+    h1 {
+        padding: 20px;
+        @include mdscreen() {
+            display: none;
+        }
+    }
+
+    hr {
+        width: 100%;
+        background-color: var(--border-color);
+        height: 1px;
+        border: none;
+        margin: 20px 0;
+
+        @include mdscreen() {
+            display: none;
+        }
+    }
+
+    .searchInput {
+        padding: 0 20px;
+        width: 100%;
+        position: relative;
+
+        @include mdscreen() {
+            display: none;
+        }
+        
+        input {
+            padding: 10px 20px;
+            width: 100%;
+            background-color: var(--button-hover);
+            border-radius: 8px;
+            color: var(--text-color);
+            position: relative;
+            border: none;
+            outline: none;
+        }
+
+        .icon {
+            font-size: 15px;
+            position: absolute;
+            right: 30px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            cursor: pointer;
+        }
+    }
+
+    .searchList {
+        @include flex-grid($direction: column, $align: flex-start);
+        width: 100%;
+        max-height: calc(100vh - 80px);
+        overflow-y: scroll;
+        height: 100%;
+
+        .header {
+            @include flex-grid($align: center, $justify: space-between);
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 18px;
+            padding: 0 20px;
+
+            span:nth-child(2) {
+                color: var(--link-color);
+                cursor: pointer;
+                font-size: 16px;
+
+                &:hover {
+                    color: var(--link-hover);
+                }
+            }
+        }
+    }
+
+    .emptysearchList {
+        @include flex-grid($direction: column, $align: flex-start);
+        width: 100%;
+        max-height: calc(100vh - 80px);
+        height: 100%;
+        padding: 0 20px;
+
+        p {
+            margin: auto;
+            width: 100%;
+            color: var(--text-lighter);
+            text-align: center;
+        }
+    }
+
+
+}

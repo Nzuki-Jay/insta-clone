@@ -1,0 +1,160 @@
+@import '../../functions';
+
+.messages {
+    @include flex-grid();
+    width: 100%;
+
+    .leftside {
+        width: 380px;
+        border-right: 1px solid var(--border-color);
+        @include flex-grid($align: flex-start, $direction: column, $gap: 20px);
+        padding-top: 20px;
+
+        @include mdscreen() {
+            width: 100px;
+            
+        }
+
+        .leftTop {
+            @include flex-grid($align: center, $justify: space-between);
+            width: 100%;
+            font-size: 20px;
+            padding-inline: 15px;
+
+            span,
+            .icon {
+                cursor: pointer;
+            }
+
+            .icon {
+                font-size: 25px;
+            }
+
+            @include mdscreen() {
+                span {
+                    display: none;
+                }
+            }
+        }
+
+        .leftBottom {
+            @include flex-grid($align: flex-start, $direction: column, $gap: 15px);
+            width: 100%;
+            max-height: calc(100vh - 60px);
+            overflow-y: scroll;
+
+            @include mdscreen() {
+                width: 100px;
+                max-height: calc(100vh - 200px);
+                
+            }
+
+            .messagesheader {
+                @include flex-grid($align: center, $justify: space-between, $gap: 15px);
+                width: 100%;
+                padding: 0 20px;
+
+                span:nth-child(1) {
+                    font-size: 18px; 
+                } 
+
+                span:nth-child(2) {
+                    color: var(--text-lighter);
+                    cursor: pointer;   
+                } 
+                
+            @include mdscreen() {  
+                display: none;  
+            }
+
+            }
+
+            .messagesProfile {
+                padding: 5px 0;
+                width: 100%;
+
+                &:hover {
+                    background-color: var(--button-hover);
+                    width: 100%;
+                }
+
+                .profdiv { 
+                    @include flex-grid($align: flex-start, $gap: 15px);
+                    color: var(--text-color);
+
+                    .img {
+                        width: 50px;
+                        height: 50px;
+                        margin-left: 20px;
+
+                        img {
+                            width: 50px;
+                            height: 50px;
+                            object-fit: cover;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .div {
+                        @include flex-grid($direction: column, $gap: 5px, $align: flex-start);
+
+                        span:nth-child(2) {
+                            font-size: 16px;
+                            color: var(--text-lighter);
+                        }
+                    }
+                    
+                    @include mdscreen() {
+                        .div {
+                            display: none;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .rightside {
+        flex: 2;
+
+        .default {
+            @include flex-grid($align: center, $justify: center, $direction: column, $gap: 15px);
+            width: 100%;
+            height: 100%;
+
+            div {
+                border: 1px solid var(--text-color);
+                border-radius: 50%;
+                width: 80px;
+                height: 80px;
+                font-size: 50px;
+                @include flex-grid($align: center, $justify: center);
+            }
+
+            span {
+                font-size: 18px;
+                color: var(--text-color);
+            }
+
+            p {
+                font-size: 16px;
+                color: var(--text-lighter);
+            }
+
+            button {
+                padding: 8px 16px;
+                background-color: var(--link-color);
+                border-radius: 5px;
+                border: none;
+                color: var(--text-color);
+                cursor: pointer;
+                
+                &:hover {
+                    background-color: rgb(44, 44, 243);
+                }
+               
+            }
+        }
+    }
+}

@@ -1,0 +1,241 @@
+@import '../../functions';
+
+.overlayPost {
+    width: 900px;
+    height: 600px;
+    background-color: var(--bg);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    @include flex-grid();
+    color: var(--text-color);
+    z-index: 1000;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+
+    @include lgscreen() {
+
+        width: 700px;
+        height: 500px;
+
+    }
+
+    @include mdscreen() {
+        width: 500px;
+        height: 500px;
+    }
+
+    .overlayLeft {
+        flex: 1;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        @include mdscreen() {
+            display: none;
+        }
+    }
+
+    .overlayRight {
+        flex: 1;
+        width: 100%;
+        padding: 20px 0 10px;
+        @include flex-grid($align: flex-start, $direction: column, $gap: 15px);
+
+        hr {
+            width: 100%;
+            background-color:  var(--border-color);
+            height: 1px;
+            border: none;     
+        }
+
+        img {
+            width: 40px;
+            object-fit: cover;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        .rightTop {
+            @include flex-grid($align: center, $justify: space-between);
+            padding: 0 20px;
+            width: 100%;
+
+            div {
+                @include flex-grid($align: center, $gap: 15px);
+            }
+        }
+
+
+        .rightCenter {
+            max-height: 350px;
+            height: 100%;
+            overflow-y: scroll;
+            width: 100%;
+            padding: 0 20px;
+            @include flex-grid($align: flex-start, $gap: 20px, $direction: column);
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            @include mdscreen() {
+                max-height: 450px;
+            }
+
+            .item {
+                @include flex-grid($align: flex-start);
+
+                p {
+                    flex: 2;
+                    margin-left: 15px;
+                    color: var(--text-light);
+
+                    span {
+                        margin-right: 5px;
+                        cursor: pointer;
+                        color: var(--text-color);
+                    }
+                }           
+            }
+
+            .comment {
+                @include flex-grid($align: center, $justify: space-between);
+                width: 100%;
+
+                .commentLeft {
+                    @include flex-grid($align: flex-start, $gap: 15px);
+
+                    .commenttext {
+                        @include flex-grid($align: flex-start, $gap: 10px, $direction: column);
+                        width: 300px;
+
+                        @include lgscreen() {
+
+                            width: 250px;
+                    
+                        }
+
+                        @include mdscreen() {
+                            width: 300px;
+                        }
+
+                        p {
+                            color: var(--text-light);
+
+                            span {
+                                margin-right: 5px;
+                                cursor: pointer;
+                                color: var(--text-color);
+                            }
+                        }  
+
+                        div {
+                            @include flex-grid($align: center, $gap: 10px);
+                            color: var(--text-lighter);
+                            font-size: 15px;
+
+                            span:nth-child(2) {
+                                cursor: pointer;
+                            }
+                        }
+
+                    }
+                     
+                }
+
+                .icon {
+                    font-size: 15px;
+                }
+            }
+            
+        }
+
+        .rightCenter2 {
+            @include flex-grid($align: flex-start, $direction: column, $gap: 10px);
+            padding: 0 20px;
+            width: 100%;
+
+
+            .rightCenter2Top {
+                @include flex-grid($align: center, $justify: space-between);
+                width: 100%;
+
+                .icon {
+                    font-size: 25px;
+                    color: var(--text-color);
+                    cursor: pointer;
+
+                    &:hover {
+                        color: var(--text-lighter);
+                    }
+                }
+
+                div {
+                    @include flex-grid($align: center, $gap: 10px);
+                }
+
+            }
+
+            .rightCenter2Bottom {
+                @include flex-grid($direction: column, $gap: 10px);
+
+                span {
+                    color: var(--text-lighter);
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .rightBottom {
+            @include flex-grid($align: center, $justify: space-between);
+            padding: 0 20px;
+            width: 100%;
+
+            form {
+                margin-right: 10px;
+                width: 100%;
+                @include flex-grid($align: center, $justify: space-between);
+
+                input {
+                    padding: 5px 0 10px;
+                    background-color: transparent;
+                    border: none;
+                    color: var(--text-color);
+                    outline: none;
+                    width: 100%;
+                    font-size: 15px;
+                }
+    
+                button {
+                    background-color: transparent;
+                    border: none;
+                    color: var(--link-color);
+                    font-size: 15px;
+                    cursor: pointer;
+    
+                    &:hover {
+                        color: var(--link-hover);
+                    }
+                }
+            }
+
+        }
+    }
+
+    .remove {
+        font-size: 25px;
+        position: absolute;
+        top: -10px;
+        right: -70px;
+        cursor: pointer;
+    }
+}

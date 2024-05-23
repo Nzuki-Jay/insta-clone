@@ -1,0 +1,40 @@
+:root {
+    --bg: rgb(24, 23, 23);
+    --text-color: white;
+    --text-lighter: rgb(161, 159, 159);
+    --text-light: rgb(212, 212, 212);
+    --border-color: rgb(104, 102, 102);
+    --button-hover: #272727;
+    --button-color: rgb(31, 30, 30);
+    --overlayBg: #252525;
+    --overlayHover: #4e4e4e;
+    --link-color: rgb(84, 84, 245);
+    --link-hover: white;
+}
+
+@mixin flex-grid($direction: none, $align: none, $justify: none, $gap: none) {
+    display: flex;
+    gap: $gap;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin lgscreen() {
+    @media screen and (max-width: 1240px) {
+        @content;
+    }
+}
+
+@mixin lgscreen2() {
+    @media screen and (max-width: 980px) {
+        @content;
+    }
+}
+
+@mixin mdscreen() {
+    @media screen and (max-width: 750px) {
+        @content;
+    }
+}
+

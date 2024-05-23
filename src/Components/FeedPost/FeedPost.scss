@@ -1,0 +1,156 @@
+@import '../../functions';
+
+.feedPost {
+    max-width: 500px;
+    width: 100%;
+    @include flex-grid($direction: column, $gap: 15px, $align: flex-start);
+    padding: 10px 20px;
+    margin: 0 auto;
+
+    .postImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .top {
+        @include flex-grid($justify: space-between, $align: center);
+        width: 100%;
+
+        .topLeft {
+            @include flex-grid($gap: 10px, $align: center);
+            cursor: pointer;
+
+            .profImg {
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            .profName {
+                @include flex-grid($align: center);
+
+                div {
+                    width: 4px;
+                    height: 4px;
+                    background-color: var(--text-lighter);
+                    border-radius: 50%;
+                    margin: 0 5px;
+                }
+
+                span:nth-child(3) {
+                    color: var(--text-lighter);
+                    font-size: 15px;
+                    
+                }
+            }
+        }
+
+        .icon {
+            cursor: pointer;
+        }
+    }
+
+    .center {
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+
+        .postImg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            overflow: hidden;
+        }
+    }
+
+    .bottom {
+        @include flex-grid($direction: column, $gap: 10px, $align: flex-start);
+        width: 100%;
+
+        .icon {
+            font-size: 25px;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--text-lighter);
+            }
+        }
+
+        .bottomTop {
+            @include flex-grid($align: center, $justify: space-between);
+            width: 100%;
+
+            .bottomTopLeft {
+                @include flex-grid($align: center, $gap: 10px);
+            }
+        }
+
+        .bottomCenter {
+            @include flex-grid($direction: column, $gap: 7px, $align: flex-start);
+            width: 100%;
+
+            .desc {
+                span {
+                    color: var(--text-lighter);
+                    cursor: pointer;
+                }
+            }
+
+            .commentBtn {
+                color: var(--text-lighter);
+                cursor: pointer;
+            }
+        }
+
+        .bottomEnd {
+            @include flex-grid($align: center, $justify: space-between);
+            width: 100%;
+
+            form {
+                @include flex-grid($align: center, $justify: space-between);
+                width: 100%;
+                margin-right: 10px;
+
+                input {
+                    padding: 5px 0 10px;
+                    background-color: transparent;
+                    border: none;
+                    color: var(--text-color);
+                    outline: none;
+                    width: 100%;
+                    font-size: 15px;
+                }
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    color: var(--link-color);
+                    font-size: 15px;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: var(--link-hover);
+                    }
+                }
+
+            }
+            
+
+            .inputicon {
+                color: var(--text-lighter);
+                cursor: pointer;
+            }
+        }
+    }
+
+    hr {
+        width: 100%;
+        border: none;
+        background-color: var(--border-color);
+        height: 1px;
+    }
+
+}

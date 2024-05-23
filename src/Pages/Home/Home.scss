@@ -1,0 +1,25 @@
+@import '../../functions';
+
+.home {
+    @include flex-grid();
+    padding: 20px 40px;
+
+    .left {
+        flex: 2;
+        @include flex-grid($align: flex-start, $gap:1.5rem, $direction: column);
+
+        @include mdscreen() {
+            @include flex-grid($direction: column);
+            width: 100%;
+        }
+    }
+
+    .right {
+        flex: 1;
+        width: 300px;
+
+        @include lgscreen() {
+            display: none;
+        }
+    }
+}

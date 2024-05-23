@@ -1,0 +1,142 @@
+@import '../../functions';
+
+.chat {
+    @include flex-grid($direction: column, $align: flex-start);
+    height: 100vh;
+    width: 100%;
+
+    @include mdscreen() {
+        max-height: calc(100vh - 120px);
+        
+    }
+
+
+    .chatnavbar {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1;
+        @include flex-grid($justify: space-between, $align: center);
+        padding: 10px 20px;
+        height: 60px;
+
+        .chatprofile {
+            @include flex-grid($gap: 15px, $align: center);
+            cursor: pointer;
+
+            img {
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            .details {
+                @include flex-grid($direction: column, $align: flex-start, $gap: 3px);
+
+                span:nth-child(2) {
+                    font-size: 16px;
+                    color: var(--text-lighter);
+                }
+            }
+        }
+
+        .chatoptions {
+            @include flex-grid($gap: 15px, $align: center);
+
+            .icon {
+                cursor: pointer;
+                font-size: 25px;
+            }
+        }
+
+        
+
+    }
+
+    .chatwindow {
+        max-height: calc(100vh - 140px);
+        overflow-y: scroll;
+        @include flex-grid($direction: column);
+        width: 100%;
+        height: 100%;
+        padding-top: 40px;
+        margin-top: 20px;
+
+
+        .user {
+            @include flex-grid($direction: column, $align: center, $justify: center, $gap: 15px);
+
+            img {
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+    
+            button {
+                padding: 8px 16px;
+                border-radius: 5px;
+                background-color: var(--button-hover);
+                border: none;
+                color: var(--text-color);
+
+                &:hover {
+                    background-color: var(--button-color);
+                }
+            }
+        }
+        
+    }
+
+    .chatinput {
+        @include flex-grid($align: center, $justify: space-around);
+        width: 95%;
+        height: 50px;
+        border-radius: 20px;
+        border: 1px solid var(--border-color);
+        padding: 0 10px;
+        margin: 20px auto;
+        position: relative;
+
+        .icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        input {
+            outline: none;
+            background-color: var(--bg);
+            border: none;
+            width: 100%;
+            height: 40px;
+            color: var(--text-color);
+            margin-left: 15px;
+        }
+
+        button {
+            color: var(--link-color);
+            border: none;
+            outline: none;
+            background-color: transparent;
+
+            &:hover {
+                color: var(--link-hover);
+            }
+        }
+
+        div {
+            @include flex-grid($align: center, $gap: 10px);
+        }
+
+        .emojipicker {
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+        }
+    }
+
+   
+}

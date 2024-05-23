@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.54db4f87.css",
+    "main.js": "/static/js/main.d0b7abd9.js",
+    "static/js/453.93f24176.chunk.js": "/static/js/453.93f24176.chunk.js",
+    "static/media/post-10.jpg": "/static/media/post-10.9bc3ea48fd662e11a185.jpg",
+    "static/media/post-3.jpg": "/static/media/post-3.2ad49886a3bfc7d71190.jpg",
+    "static/media/post-8.jpg": "/static/media/post-8.9070875a1892f3cf4625.jpg",
+    "static/media/profile-6.jpg": "/static/media/profile-6.77ca4b238dc132d7a551.jpg",
+    "static/media/post-1.jpg": "/static/media/post-1.6160b4ebe3db028e8f87.jpg",
+    "static/media/post-9.jpg": "/static/media/post-9.8de26c65a39fe7688333.jpg",
+    "static/media/post-2.jpg": "/static/media/post-2.3d0a96fac3c61ec97862.jpg",
+    "static/media/profile-8.jpg": "/static/media/profile-8.d171156cda0d4f23ba2d.jpg",
+    "static/media/post-11.jpg": "/static/media/post-11.cc9d2a2f624a4083fb48.jpg",
+    "static/media/profile-7.jpg": "/static/media/profile-7.08659d69a7696ef89387.jpg",
+    "static/media/post-7.jpg": "/static/media/post-7.ab4cb4663b45a9e8aefd.jpg",
+    "static/media/profile-3.jpg": "/static/media/profile-3.8576eea39090af841c9d.jpg",
+    "static/media/post-6.jpg": "/static/media/post-6.0d317b9cd74cbacb5a69.jpg",
+    "static/media/post-4.jpg": "/static/media/post-4.c411d11b889f5cc74f88.jpg",
+    "static/media/profile-1.jpg": "/static/media/profile-1.b3d84364cb6b19d40e26.jpg",
+    "static/media/post-5.jpg": "/static/media/post-5.5eb587cba591414b71f7.jpg",
+    "static/media/profile-2.jpg": "/static/media/profile-2.ca017b49e2e40e953095.jpg",
+    "static/media/profile-4.jpg": "/static/media/profile-4.89f863da833bbc97a82e.jpg",
+    "static/media/profile-9.jpg": "/static/media/profile-9.7f727772ce90b32d3d7a.jpg",
+    "static/media/profile-10.jpg": "/static/media/profile-10.0e21e7cd4df13f906b10.jpg",
+    "static/media/profile-5.jpg": "/static/media/profile-5.0d6dc0d0d2b6d480798a.jpg",
+    "static/media/post-12.jpeg": "/static/media/post-12.62615575602c7ab47148.jpeg",
+    "index.html": "/index.html",
+    "main.54db4f87.css.map": "/static/css/main.54db4f87.css.map",
+    "main.d0b7abd9.js.map": "/static/js/main.d0b7abd9.js.map",
+    "453.93f24176.chunk.js.map": "/static/js/453.93f24176.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54db4f87.css",
+    "static/js/main.d0b7abd9.js"
+  ]
+}

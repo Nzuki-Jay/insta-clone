@@ -1,0 +1,102 @@
+@import '../../functions';
+
+.shareThought {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 400px;
+    height: 400px;
+    background-color: var(--button-color);
+    z-index: 1000;  
+    @include flex-grid($align: center, $justify: flex-start, $direction: column, $gap: 20px);
+    border-radius: 8px;
+    padding: 20px;
+    
+
+    span {
+        font-size: 25px;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .form {
+        position: relative;
+        width: 100%;
+        @include flex-grid($align: center, $justify: flex-start, $direction: column);
+
+        img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .emoji {
+            margin-top: 20px;
+            @include flex-grid($align: center, $justify: center);
+            width: 30px;
+            height: 30px;
+            background-color: var(--bg);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        form {
+            @include flex-grid($align: center, $justify: space-between, $direction: column, $gap: 15px);
+            width: 100%;
+
+            .input {
+                background-color: var(--button-hover);
+                padding: 10px 20px;
+                border: none;
+                outline: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                border-radius: 8px;
+                width: 200px;
+                color: white;
+            }
+
+            button {
+                position: absolute;
+                top: -45px;
+                right: 5px;
+                background-color: transparent;
+                border: none;
+                color: var(--link-color);
+                cursor: pointer;
+                font-size: 17px;
+                pointer-events: none;
+                opacity: 0.4;
+
+                &:hover {
+                    color: var(--link-hover);
+                }
+
+                &.active {
+                    pointer-events: initial;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .emojipicker {
+        position: absolute;
+        right: -100%;
+        top: 10%;
+    }
+}
